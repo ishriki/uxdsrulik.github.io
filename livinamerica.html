@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f7">
+  <meta name="description" content="An onboarding usability audit and proposed trait-selection design for a mobile life simulation.">
+  <title>Livin’ America case study | Srulik Shriki</title>
+  <link rel="icon" href="assets/home/srulik-mark.webp">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <script src="assets/js/portfolio.js" defer></script>
+</head>
+<body id="top" class="theme-game">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html"><img src="assets/home/srulik-mark.webp" width="34" height="34" alt=""> <span>Srulik Shriki</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#projects">Work</a>
+        <a href="index.html#about">About</a>
+        <a class="contact" href="mailto:ishriki@emich.edu">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="case-nav-bar">
+    <nav class="wrap case-nav" aria-label="In this case study"><a href="#overview">Overview</a><a href="#problems-solutions">Key findings</a><a href="#methodology">Audit details</a><a href="#recommendations">Reflection</a></nav>
+  </div>
+  <main id="main" tabindex="-1">
+
+    <div class="case-top">
+      <section class="wrap case-hero" aria-labelledby="case-title">
+        <div>
+          <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> Selected work</a>
+          <p class="eyebrow">02 / Mobile game UX</p>
+          <h1 id="case-title">Livin’ America</h1>
+          <p class="case-subtitle">Where first-time players lose their bearings</p>
+          <p class="case-intro">I audited the first session of a mobile life simulation and designed a clearer way for players to choose a trait.</p>
+        </div>
+        <figure class="case-cover"><img src="assets/home/livin-america.webp" alt="Livin’ America’s mobile welcome screen" width="1000" height="563" fetchpriority="high"></figure>
+      </section>
+    </div>
+    <div class="wrap case-body">
+      <section class="case-overview" id="overview" aria-labelledby="overview-title">
+        <div>
+          <p class="eyebrow">The challenge</p>
+          <h2 id="overview-title">Where do first-time players lose their bearings?</h2>
+          <p>Livin’ America asks players to make life choices from their first session. I looked at whether a new player could tell what each screen was asking, read at their own pace, and understand who they were playing.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Usability audit and UI concept</dd></div>
+          <div><dt>Methods</dt><dd>80-minute walkthrough and heuristic review, with App Store reviews as context</dd></div>
+          <div><dt>Status</dt><dd>Proposed trait-selection concept</dd></div>
+        </dl>
+      </section>
+      <section class="case-section" id="problems-solutions" aria-labelledby="findings-title">
+        <div class="section-heading"><h2 id="findings-title">Three onboarding findings</h2><span class="eyebrow">Original screens and proposed design</span></div>
+
+      <article class="game-finding" id="trait-selection">
+        <div class="finding-copy">
+          <p class="eyebrow">Finding 01</p><h3>Make the selection rule explicit</h3>
+          <p><strong>Walkthrough observation.</strong> The trait screen left me wondering whether I could pick one trait or several.</p>
+          <p><strong>Recommendation.</strong> If the step allows one trait, say “Choose one trait” above the options and give the selected card a clear radio-style indicator.</p>
+        </div>
+        <figure class="phone-figure"><a href="gallery/5.jpg" aria-label="Open original screenshot of the trait selection screen"><img src="gallery/5.jpg" width="720" height="1600" loading="lazy" alt="the trait selection screen"></a><figcaption>Trait selection during setup</figcaption></figure>
+
+      </article>
+      <section class="trait-concept" id="trait-concept" aria-labelledby="trait-concept-title">
+        <div class="trait-concept-copy">
+          <p class="eyebrow">Proposed interface · Finding 01</p>
+          <h3 id="trait-concept-title">One choice, two states</h3>
+          <p>The instruction sets the rule up front. The selected card confirms the choice through its border, radio indicator, and label. Continue becomes available after a trait is selected.</p>
+        </div>
+        <div class="trait-states" role="group" aria-label="Two states of the proposed trait selection screen">
+          <figure class="trait-state">
+            <figcaption><span class="eyebrow">01 / Default</span><strong>Before a choice</strong></figcaption>
+            <div class="trait-screen">
+              <p class="trait-step">Character setup</p>
+              <p class="trait-title">Choose one trait</p>
+              <ul class="trait-options">
+                <li><span class="trait-radio"></span>Artistic</li>
+                <li><span class="trait-radio"></span>Athletic</li>
+                <li><span class="trait-radio"></span>Adventurous</li>
+              </ul>
+              <p class="trait-action trait-unavailable">Continue</p>
+              <p class="trait-status">Choose a trait to continue.</p>
+            </div>
+          </figure>
+          <figure class="trait-state">
+            <figcaption><span class="eyebrow">02 / Selected</span><strong>Ready to continue</strong></figcaption>
+            <div class="trait-screen">
+              <p class="trait-step">Character setup</p>
+              <p class="trait-title">Choose one trait</p>
+              <ul class="trait-options">
+                <li class="trait-selected"><span class="trait-radio"></span>Artistic <small>Selected</small></li>
+                <li><span class="trait-radio"></span>Athletic</li>
+                <li><span class="trait-radio"></span>Adventurous</li>
+              </ul>
+              <p class="trait-action">Continue <span aria-hidden="true">→</span></p>
+              <p class="trait-status">Artistic selected.</p>
+            </div>
+          </figure>
+        </div>
+      </section>
+      <article class="game-finding" id="reading-pace">
+        <div class="finding-copy">
+          <p class="eyebrow">Finding 02</p><h3>Let players read at their own pace</h3>
+          <p><strong>Walkthrough observation.</strong> Automatic scrolling made the customs instructions hard to finish, and an overlay interrupted reading.</p>
+          <p><strong>Recommendation.</strong> Use manual scrolling and keep the instructions accessible until the player is ready to continue.</p>
+        </div>
+        <figure class="phone-figure"><a href="gallery/13.jpg" aria-label="Open original screenshot of the customs instructions"><img src="gallery/13.jpg" width="720" height="1600" loading="lazy" alt="the customs instructions"></a><figcaption>Customs instructions with an overlay</figcaption></figure>
+      </article>
+      <article class="game-finding" id="player-age">
+        <div class="finding-copy">
+          <p class="eyebrow">Finding 03</p><h3>Explain whose story is starting</h3>
+          <p><strong>Walkthrough observation.</strong> The story treated the player as 18 after an older age was entered during setup.</p>
+          <p><strong>Recommendation.</strong> If 18 is a fixed starting age, explain the premise before the first story choice. If setup is meant to personalize the character, carry that choice into the story.</p>
+        </div>
+        <figure class="phone-figure"><a href="gallery/10.jpg" aria-label="Open the original early story screenshot"><img src="gallery/10.jpg" width="720" height="1600" loading="lazy" alt="an early story screen"></a><figcaption>Early story screen from the walkthrough</figcaption></figure>
+      </article>
+      </section>
+      <section class="case-section support-section" id="methodology" aria-labelledby="method-title">
+        <div class="section-heading"><h2 id="method-title">Audit details</h2></div>
+        <details class="disclosure" id="sources"><summary>Walkthrough and sources</summary><div class="disclosure-body">
+          <p><strong>Walkthrough.</strong> I spent 80 minutes tracing the first-session flow, capturing screens and evaluating where the interface made a choice or its consequences hard to understand. The three findings above come from that walkthrough.</p>
+          <p><strong>Secondary context.</strong> I also consulted iOS App Store reviews. I’d use interviews or onboarding tests to explore whether the same issues recur with new players.</p>
+        </div></details>
+        <details class="disclosure" id="user-persona"><summary>Illustrative player profile</summary><div class="disclosure-body">
+          <div class="profile"><img src="gallery/persona2.jpg" alt="" width="90" height="90" loading="lazy"><div><h3>Jo · Career transition</h3><p>Jo represents a possible player who wants to explore a life change after gaining work experience. I’d use this profile to frame a research question about how older players interpret the game’s opening premise.</p></div></div>
+        </div></details>
+        <details class="disclosure" id="showcase"><summary>View the complete audit · 17 steps</summary><div class="disclosure-body"><div data-audit>
+  <div class="audit-controls" data-audit-controls hidden><button type="button" data-prev aria-label="Previous audit step">←</button><p role="status" data-audit-status></p><button type="button" data-next aria-label="Next audit step">→</button></div><article class="audit-step" data-audit-step><div><h3>1. Legal Disclaimer Screen</h3><p>&quot;The disclaimer needs to be simpler to understand.&quot; Dense legal copy at initial launch creates onboarding friction.</p><p>Show main legal points in short bullet points, with a link to read full terms if needed.</p></div><div class="audit-media"><a href="gallery/1.jpg"><img src="gallery/1.jpg" alt="Step 1 Legal Disclaimer Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>2. Login Options &amp; Button Layout</h3><p>&quot;The lower button is cut off. Add username/password option.&quot; Layout elements clipping on certain screen dimensions affect visual polish.</p><p>Fix bottom spacing so buttons aren&#x27;t cut off, and support standard login input fields.</p></div><div class="audit-media"><a href="gallery/2.jpg"><img src="gallery/2.jpg" alt="Step 2 Login Options Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>3. Google Login Transition Animation</h3><p>&quot;The photo animation moved in a funky way and was slow.&quot; Transition timing following authentication shapes performance impression.</p><p>Speed up loading animations and make them fade in smoothly without progress freezes.</p></div><div class="audit-media"><a href="gallery/3.jpg"><img src="gallery/3.jpg" alt="Step 3 Transition Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>4. Graduation Prompt Framing</h3><p>&quot;Who are you... truly? Direction needed.&quot; Structural indicators orient players when encountering reflective story choices.</p><p>Add a clear label like [Scenario Question] above the prompt and frame choices in first-person statements.</p></div><div class="audit-media"><a href="gallery/4.jpg"><img src="gallery/4.jpg" alt="Step 4 Graduation Prompt Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>5. Trait Selection Guidance &amp; Mechanics</h3><p>&quot;Can I select more than one trait?&quot; Clear visual UI affordances establish single vs. multi-select expectations.</p><p>Use standard radio buttons and add a short helper note explaining to pick only one trait.</p></div><div class="audit-media"><a href="gallery/5.jpg"><img src="gallery/5.jpg" alt="Step 5 Trait Selection Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>6. Microcopy &amp; Global Accessibility (&#x27;Hazard Pay&#x27;)</h3><p>&quot;Love the humor! But non-native speakers might miss &#x27;hazard pay&#x27;.&quot; Witty personality enriches brand while accessibility ensures global comprehension.</p><p>Maintain the fun tone while ensuring core game rules are explained clearly for all audiences.</p></div><div class="audit-media"><a href="gallery/6.jpg"><img src="gallery/6.jpg" alt="Step 6 Microcopy Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>7. Family Wealth Text Logic</h3><p>&quot;Sentences contradict with &#x27;But&#x27; when they shouldn&#x27;t.&quot; Conjunctions work best when highlighting explicit contrast.</p><p>Rewrite text logic: &quot;Everyone&#x27;s story starts at the beginning... But not everyone starts with equal resources.&quot;</p></div><div class="audit-media"><a href="gallery/7.jpg"><img src="gallery/7.jpg" alt="Step 7 Family Wealth Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>8. Spinning Wheel Progress &amp; Context</h3><p>&quot;Waited 30 seconds and screen got stuck on &#x27;Not bad...&#x27;.&quot; Progress freezes hurt trust; context prior to spinning sets expectation.</p><p>Fix progress freeze bug and add context explaining why checking family wealth matters.</p></div><div class="audit-media"><a href="gallery/8.jpg"><img src="gallery/8.jpg" alt="Step 8 Spinning Wheel Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>9. Game Start Hook &amp; Session Saving</h3><p>&quot;Interactive phone call was exciting! What about saving my stage?&quot; Session persistence ensures returning users resume progress seamlessly.</p><p>Keep interactive phone call for new users, but auto-resume progress for returning accounts.</p></div><div class="audit-media"></div></article>
+<article class="audit-step" data-audit-step><div><h3>10. Player Age Consistency</h3><p>&quot;App said I&#x27;m 18 even though I registered an older age.&quot; Dynamic story copy matching user input maintains narrative immersion.</p><p>Dynamically inject the exact age entered during registration into narrative story text.</p></div><div class="audit-media"><a href="gallery/10.jpg"><img src="gallery/10.jpg" alt="Step 10 Age Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>11. City Selection Narrative &amp; Airline Tie-in</h3><p>&quot;Why is Chicago a great selection? Connect to American Airlines better.&quot; Atmospheric city details make partner integrations feel organic.</p><p>Add city highlight details before seamlessly introducing the airline sponsor integration.</p></div><div class="audit-media"><a href="gallery/11.jpg"><img src="gallery/11.jpg" alt="Step 11 City Selection Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>12. Google Maps Zoom Sequence</h3><p>&quot;Map starts already focused on Chicago.&quot; Starting zoomed out establishes visual storytelling of journey travel.</p><p>Start camera zoomed out globally, then smoothly animate moving across continents to Chicago.</p></div><div class="audit-media"><a href="gallery/12.jpg"><img src="gallery/12.jpg" alt="Step 12 Google Maps Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>13. Customs Screen Pace &amp; Touch Controls</h3><p>&quot;Fast automatic text scroll made rules unreadable.&quot; Touch interruptions degrade reading control during informational steps.</p><p>Allow manual drag-scrolling at player speed and remove interrupting warning overlays.</p></div><div class="audit-media"><a href="gallery/13.jpg"><img src="gallery/13.jpg" alt="Step 13 Customs Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>14. Apartment Options &amp; Typography</h3><p>&quot;Take it or keep looking wasn&#x27;t explicit. Font sizes differed.&quot; Explicit trade-off labels and uniform font sizing reinforce clarity.</p><p>Standardize button typography and label options clearly: &#x27;Accept Free Apartment&#x27; vs &#x27;Explore Upgrade&#x27;.</p></div><div class="audit-media"><a href="gallery/14.jpg"><img src="gallery/14.jpg" alt="Step 14 Apartment Selection Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>15. Creative Career Paths &amp; Information Cards</h3><p>&quot;I chose to work in Design, and there were only 2 options: architect and interior designer. I felt like I would like a representation of graphic designers. I thought that the information behind the cards was very helpful and detailed enough. I was able to make a sensible decision.&quot;</p><p>The flip-card design pattern effectively informs player choices; expanding career options enhances creative representation.</p><p>Keep flip card design, but add more creative job paths like Graphic Designer and UX/UI Designer.</p></div><div class="audit-media"><a href="gallery/15A.jpg"><img src="gallery/15A.jpg" alt="Step 15A Architect View" loading="lazy"></a><a href="gallery/15B.jpg"><img src="gallery/15B.jpg" alt="Step 15B Interior Designer View" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>16. Job Market Realism &amp; Interview Concept</h3><p>&quot;Job pool feels realistic. Would love an interview demonstration.&quot; Interactive hiring simulations build authentic engagement.</p><p>Add recruitment mini-games and simulated recruiter interviews for practical life-skill practice.</p></div><div class="audit-media"><a href="gallery/16.jpg"><img src="gallery/16.jpg" alt="Step 16 Job Market Screen" loading="lazy"></a></div></article>
+<article class="audit-step" data-audit-step><div><h3>17. Demographic Representation Across Life Stages</h3><p>&quot;Relocating to the USA happens across all age groups and experience levels.&quot; Multiple life-stage branches expand player market reach.</p><p>Offer optional setup tracks (Student, Young Professional, Career Relocator) during onboarding.</p></div><div class="audit-media"><a href="gallery/17.jpg"><img src="gallery/17.jpg" alt="Step 17 Life Stages Screen" loading="lazy"></a></div></article></div></div></details>
+      </section>
+      <section class="case-section reflection" id="recommendations" aria-labelledby="reflection-title">
+        <div class="reflection-title"><p class="eyebrow">Reflection</p><h2 id="reflection-title">Test the premise before expanding the story</h2></div>
+        <div><p>Clarifying that the story starts at 18 is a small copy change. Supporting multiple life stages would also change the scenarios, choices, and progression.</p><p>I’d test the clearer setup with first-time players across age groups and ask them who they’re playing and how they know. If players understood the premise and still wanted to explore later-life scenarios, I’d prototype one alternative opening before designing more story tracks.</p></div>
+      </section>
+      <a class="next-project" href="pizza.html"><span><span class="eyebrow">Also in selected work / E-commerce UX</span><strong>Jet’s Pizza</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>Srulik Shriki <span class="footer-role">· UX/UI Design</span></span>
+      <nav aria-label="Footer">
+        <a href="mailto:ishriki@emich.edu">Email</a><a href="https://www.linkedin.com/in/srulik-shriki-858525204/">LinkedIn</a><a href="https://canva.link/yx0ch3mzbwve8dt">Résumé</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
