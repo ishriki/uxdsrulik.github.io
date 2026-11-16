@@ -25,6 +25,74 @@
     .flagship .concept-pair {
       gap: clamp(1.25rem, 2.5vw, 2rem);
     }
+
+    .prototype-frame {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: clamp(35rem, 78vh, 54rem);
+      border: 1px solid #ded8d2;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .prototype-actions {
+      margin: 0 0 1rem;
+    }
+
+    .interview-table-scroll {
+      overflow-x: auto;
+      border: 1px solid #ded8d2;
+      border-radius: .85rem;
+      background: #fff;
+    }
+
+    .interview-table-scroll:focus-visible {
+      outline: 2px solid #9f2029;
+      outline-offset: 3px;
+    }
+
+    .interview-table {
+      width: 100%;
+      min-width: 63rem;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: .925rem;
+      line-height: 1.5;
+    }
+
+    .interview-table th,
+    .interview-table td {
+      padding: .85rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e9e3de;
+    }
+
+    .interview-table thead th {
+      background: #f4efeb;
+    }
+
+    .interview-table th:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      border-right: 1px solid #e9e3de;
+    }
+
+    .interview-table tbody th {
+      background: #fff;
+    }
+
+    .interview-table tbody tr:last-child > * {
+      border-bottom: 0;
+    }
+
+    .interview-table-hint {
+      margin: 0 0 .65rem;
+      color: #605852;
+      font-size: .875rem;
+    }
   </style>
   <script src="assets/js/portfolio.js" defer></script>
 </head>
@@ -53,9 +121,7 @@
           </div>
           <div>
             <p class="case-intro">A guest tried to call the store after the pickup address disappeared. I designed a checkout and receipt that give the same pickup details a consistent place before and after the order is placed.</p>
-            <a class="button" href="https://broom-silk-85495694.figma.site/" target="_blank" rel="noopener noreferrer">
-              Try the interactive prototype <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
-            </a>
+            <a class="button" href="#prototype">Try the interactive prototype <span aria-hidden="true">↓</span></a>
           </div>
         </div>
 
@@ -110,6 +176,8 @@
       <nav class="wrap case-nav" aria-label="In this case study">
         <a href="#overview">Overview</a>
         <a href="#showcase">Design decisions</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#interviews">Interviews</a>
         <a href="#research">Research details</a>
         <a href="#conclusion">Reflection</a>
       </nav>
@@ -123,7 +191,7 @@
         </div>
         <dl class="facts">
           <div><dt>Role</dt><dd>Usability audit and UI redesign</dd></div>
-          <div><dt>Methods</dt><dd>One guest checkout observation and a walkthrough of the live flow</dd></div>
+          <div><dt>Methods</dt><dd>Live-site checkout observation, competitive walkthrough, and unmoderated prototype pilot</dd></div>
           <div><dt>Status</dt><dd>Redesign concept</dd></div>
         </dl>
       </section>
@@ -172,6 +240,74 @@
         <div class="comparison" role="group" aria-label="Original and proposed interface excerpts"><div class="comparison-panel"><p class="eyebrow">Original receipt · excerpt</p><div class="ui-sample"><span class="sample-label">Jet’s Pizza</span><strong>Pickup confirmation</strong><span>Ypsilanti, MI 48197</span><div class="ui-line"><span>Total</span><strong>$29.65</strong></div></div></div><div class="comparison-panel proposed"><p class="eyebrow">Proposed receipt · example</p><div class="ui-sample"><span class="sample-label">Jet’s Pizza · Pickup confirmed</span><strong>Order #JP-1042</strong><span>1298 Anna J. Stepp Dr<br>Ypsilanti, MI 48197</span><div class="ui-line"><span>Pickup</span><strong>5:30 p.m.</strong></div><div class="ui-line"><span>Pay at store</span><strong>$29.65</strong></div></div></div></div>
       </article>
       </section>
+      <section class="case-section support-section" id="prototype" aria-labelledby="prototype-title">
+        <div class="section-heading"><h2 id="prototype-title">Interactive prototype</h2></div>
+        <p>Try a simulated guest pickup order using ZIP code <strong>48197</strong>. Use the sample contact details at checkout. No order or payment will be processed.</p>
+        <p class="prototype-actions">
+          <a class="button" href="https://broom-silk-85495694.figma.site/" target="_blank" rel="noopener noreferrer">Open prototype in a new tab <span aria-hidden="true">↗</span></a>
+        </p>
+        <iframe class="prototype-frame" src="https://broom-silk-85495694.figma.site/" title="Jet’s Pizza guest pickup ordering prototype" loading="lazy" allowfullscreen></iframe>
+      </section>
+      <section class="case-section support-section" id="interviews" aria-labelledby="interviews-title">
+        <div class="section-heading"><h2 id="interviews-title">Participant interviews</h2></div>
+        <p>Four participants tried the same guest pickup scenario independently and replied to follow-up questions over WhatsApp. The table summarizes their replies in English.</p>
+        <p>All four reported completing the order. Two reported that the page jumped to the top, including one while opening the receipt. The replies did not establish whether participants could reliably identify the order number.</p>
+        <p class="interview-table-hint" id="interview-table-note">A dash marks a question without a specific response. Scroll across to read all columns on smaller screens.</p>
+        <div class="interview-table-scroll" role="region" aria-label="Interview response table" aria-describedby="interview-table-note" tabindex="0">
+          <table class="interview-table">
+            <caption class="sr-only">Responses from four prototype pilot participants</caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Order completion</th>
+                <th scope="col">Topping charges</th>
+                <th scope="col">Amount due at pickup</th>
+                <th scope="col">Pickup address and order ID</th>
+                <th scope="col">Suggested change</th>
+                <th scope="col">Additional comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Maor</th>
+                <td>Reported completing the order independently without getting stuck.</td>
+                <td>Expected jalapeños to cost extra, depending on the restaurant.</td>
+                <td>Expected to pay for the order only. Did not give an amount.</td>
+                <td>Said the address was visible from the start. Did not give an address or order ID.</td>
+                <td>Keep the page in place when opening the receipt. It jumped back to the top.</td>
+                <td>Suggested searching for a branch by street address.</td>
+              </tr>
+              <tr>
+                <th scope="row">Mark</th>
+                <td>Reported completing the order without getting stuck.</td>
+                <td>Reported no extra charge for pepperoni and a $1.98 charge for jalapeños. Had expected about $5 extra.</td>
+                <td>Reported seeing $29.65 before payment.</td>
+                <td>Identified 1298 Anna J. Stepp Dr, Ypsilanti, MI 48197. Did not give an order ID.</td>
+                <td>Would keep the flow as it was and described it as clear and easy.</td>
+                <td>Mentioned being unfamiliar with local pizza prices.</td>
+              </tr>
+              <tr>
+                <th scope="row">Ido</th>
+                <td>Reported completing the order independently and described the flow as smooth.</td>
+                <td>Expected to pay $1–$2 per topping.</td>
+                <td>Mentioned the pickup timer and guessed pickup might cost up to $5. Did not give the order total.</td>
+                <td>Read out parts of the address and several numbers. Did not clearly identify an order ID.</td>
+                <td>Keep the scroll position after clicking. The page repeatedly jumped to the top.</td>
+                <td>Also read out the estimated pickup window.</td>
+              </tr>
+              <tr>
+                <th scope="row">Hodaya</th>
+                <td>Reported completing the order. Noticed pepperoni was missing on the first attempt and repeated the order.</td>
+                <td>Added pepperoni, jalapeños, and cola on the second attempt. Reported no price expectation.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Later said the overall flow worked and was clear.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
       <section class="case-section support-section" id="research" aria-labelledby="research-title">
         <div class="section-heading"><h2 id="research-title">Research details</h2></div>
         <details class="disclosure" id="pizza-research"><summary>Observation, guest profile, and reference flow</summary><div class="disclosure-body">
@@ -201,7 +337,10 @@
       </section>
       <section class="case-section reflection" id="conclusion" aria-labelledby="reflection-title">
         <div class="reflection-title"><p class="eyebrow">Reflection</p><h2 id="reflection-title">What I’d test next</h2></div>
-        <div><p>The session showed how a missing detail can carry over from checkout to pickup. The redesign’s effect on shoppers is still an open question.</p><p>I’d give several first-time guest shoppers a pickup task. Before placing the order, I’d ask them to find the total and street address. Afterward, I’d ask them to find the order number in the email. I’d record first attempts and where anyone needed help.</p></div>
+        <div>
+          <p>I’d fix the jump to the top when opening the receipt, then watch first-time guest shoppers complete the pickup flow.</p>
+          <p>I’d check whether they select the requested toppings on their first attempt and can independently find the full pickup address, amount due, and order number.</p>
+        </div>
       </section>
       <details class="disclosure" id="next-steps"><summary>Explore the order tracking concept</summary><div class="disclosure-body">
         <p>This optional concept follows the order from confirmation to pickup. I’d explore it after testing the core checkout and receipt.</p>
