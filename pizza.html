@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f7">
+  <meta name="description" content="A checkout and receipt design concept that keeps pickup details visible throughout the guest journey.">
+  <title>Jet’s Pizza case study | Srulik Shriki</title>
+  <link rel="icon" href="assets/home/srulik-mark.webp">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <style>
+    .flagship-heading {
+      row-gap: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+    }
+
+    .flagship-heading h1 {
+      margin-block-end: clamp(.85rem, 1.5vw, 1.25rem);
+    }
+
+    .flagship-heading .case-intro,
+    .flagship-heading .case-pilot-summary {
+      margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .flagship .concept-pair {
+      gap: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    .prototype-frame {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: clamp(35rem, 78vh, 54rem);
+      border: 1px solid #ded8d2;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .prototype-actions {
+      margin: 0 0 1rem;
+    }
+
+    .interview-table-scroll {
+      overflow-x: auto;
+      border: 1px solid #ded8d2;
+      border-radius: .85rem;
+      background: #fff;
+    }
+
+    .interview-table-scroll:focus-visible {
+      outline: 2px solid #9f2029;
+      outline-offset: 3px;
+    }
+
+    .interview-table {
+      width: 100%;
+      min-width: 63rem;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: .925rem;
+      line-height: 1.5;
+    }
+
+    .interview-table th,
+    .interview-table td {
+      padding: .85rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e9e3de;
+    }
+
+    .interview-table thead th {
+      background: #f4efeb;
+    }
+
+    .interview-table th:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      border-right: 1px solid #e9e3de;
+    }
+
+    .interview-table tbody th {
+      background: #fff;
+    }
+
+    .interview-table tbody tr:last-child > * {
+      border-bottom: 0;
+    }
+
+    .interview-table-hint {
+      margin: 0 0 .65rem;
+      color: #605852;
+      font-size: .875rem;
+    }
+
+    .pilot-impact {
+      margin-top: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .pilot-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+      gap: .8rem;
+      margin: 1rem 0 0;
+    }
+
+    .pilot-metrics > div {
+      padding: 1rem 1.15rem;
+      border: 1px solid #ded8d2;
+      border-radius: .85rem;
+      background: #fff;
+    }
+
+    .pilot-metrics dt {
+      font-weight: 650;
+    }
+
+    .pilot-metrics dd {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: .25rem .65rem;
+      margin: .4rem 0 0;
+    }
+
+    .pilot-metric-value {
+      color: #9f2029;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 750;
+      line-height: 1.1;
+    }
+
+    .pilot-metric-count {
+      color: #605852;
+      font-size: .875rem;
+    }
+  </style>
+  <script src="assets/js/portfolio.js" defer></script>
+</head>
+<body id="top" class="theme-pizza">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html"><img src="assets/home/srulik-mark.webp" width="34" height="34" alt=""> <span>Srulik Shriki</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#projects">Work</a>
+        <a href="index.html#about">About</a>
+        <a class="contact" href="mailto:ishriki@emich.edu">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+
+    <div class="case-top">
+      <section class="wrap flagship" aria-labelledby="case-title">
+        <div class="flagship-heading">
+          <div>
+            <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> Selected work</a>
+            <p class="eyebrow">01 / E-commerce UX</p>
+            <h1 id="case-title">Jet’s Pizza</h1>
+            <p class="case-subtitle">Making pickup details easier to find</p>
+          </div>
+          <div>
+            <p class="case-intro">I redesigned Jet’s Pizza’s guest checkout and receipt after watching a shopper try to call the store when the pickup address disappeared.</p>
+            <p class="case-pilot-summary">In a four-person prototype pilot, <strong>all four participants</strong> reported completing the order and understanding the pickup address.</p>
+            <a class="button" href="#prototype">Try the interactive prototype <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <div class="concept-pair" aria-label="Proposed checkout and email receipt">
+          <figure class="concept-panel">
+            <figcaption><span class="eyebrow">01 / Before placing the order</span><strong>Checkout</strong></figcaption>
+            <div class="order-mock">
+              <div class="mock-top"><span>Jet’s Pizza</span><span>Guest checkout</span></div>
+              <div class="order-body">
+                <p class="mock-title">Review your order</p>
+                <div class="pickup-block">
+                  <span>Pickup location</span>
+                  <strong>1298 Anna J. Stepp Dr</strong>
+                  <span>Ypsilanti, MI 48197 · 5:30 p.m.</span>
+                </div>
+                <dl class="mock-lines">
+                  <div><dt>Large combo</dt><dd>$25.99</dd></div>
+                  <div><dt>Drink</dt><dd class="mock-included">Included</dd></div>
+                  <div><dt>Taxes and fees</dt><dd>$3.66</dd></div>
+                  <div class="mock-total"><dt>Total due at pickup</dt><dd>$29.65</dd></div>
+                </dl>
+                <span class="mock-action">Place pickup order</span>
+              </div>
+            </div>
+          </figure>
+          <figure class="concept-panel">
+            <figcaption><span class="eyebrow">02 / After placing the order</span><strong>Email receipt</strong></figcaption>
+            <div class="order-mock">
+              <div class="mock-top"><span>Jet’s Pizza</span><span>Order confirmation</span></div>
+              <div class="order-body">
+                <p class="mock-title">Your order is confirmed</p>
+                <div class="pickup-block">
+                  <span>Pickup location</span>
+                  <strong>1298 Anna J. Stepp Dr</strong>
+                  <span>Ypsilanti, MI 48197 · 5:30 p.m.</span>
+                </div>
+                <dl class="mock-lines">
+                  <div><dt>Order number</dt><dd>#JP-1042</dd></div>
+                  <div><dt>Order type</dt><dd>Guest pickup</dd></div>
+                  <div><dt>Payment</dt><dd>Pay at store</dd></div>
+                  <div class="mock-total"><dt>Total due at pickup</dt><dd>$29.65</dd></div>
+                </dl>
+                <p class="mock-note">Have your order number ready at pickup.</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+        <p class="concept-caption">Proposed interface screens with sample order details</p>
+      </section>
+    </div>
+    <div class="case-nav-bar">
+      <nav class="wrap case-nav" aria-label="In this case study">
+        <a href="#overview">Problem &amp; role</a>
+        <a href="#showcase">Design decisions</a>
+        <a href="#interviews">Prototype test</a>
+        <a href="#conclusion">What changed</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#research">Research details</a>
+      </nav>
+    </div>
+    <div class="wrap case-body">
+      <section class="case-overview" id="overview" aria-labelledby="overview-title">
+        <div>
+          <p class="eyebrow">The problem</p>
+          <h2 id="overview-title">The pickup address disappeared during checkout</h2>
+          <p>After choosing a store on the live site, the shopper saw only the city and state. Included options appeared to cost extra, and the confirmation email lacked a full street address and an order number.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>My contribution</dt><dd>I observed the original checkout, compared it with Domino’s, redesigned the combo builder, guest checkout, and receipt, and built the interactive prototype in Figma Make.</dd></div>
+          <div><dt>Status</dt><dd>Unofficial redesign concept</dd></div>
+        </dl>
+      </section>
+      <section class="case-section" id="showcase" aria-labelledby="decisions-title">
+        <div id="problems" class="anchor"></div>
+        <div class="section-heading"><h2 id="decisions-title">Three design decisions</h2><span class="eyebrow">Before and proposed</span></div>
+        <section class="design-directions" aria-labelledby="directions-title">
+          <h3 id="directions-title">Two ways to keep the address visible</h3>
+          <div class="direction-grid">
+            <div class="direction direction-chosen">
+              <p class="eyebrow">Proposed direction</p>
+              <h4>Persistent pickup card</h4>
+              <p>Keep the address easy to find throughout checkout and carry the same layout into the receipt. The card takes up more space on a small screen.</p>
+            </div>
+            <div class="direction">
+              <p class="eyebrow">Alternative concept</p>
+              <h4>Address at key steps</h4>
+              <p>Repeat the address at branch selection, final review, and confirmation. This keeps intermediate screens lighter and gives guests fewer places to recheck the address.</p>
+            </div>
+          </div>
+          <p class="direction-note">I chose the persistent card because the shopper needed to recheck the address after choosing a store. A mobile comparison would show whether repeating the address at key steps is enough.</p>
+        </section>
+
+      <article class="decision" id="pickup-address">
+        <div class="decision-copy">
+          <h3>01. Keep the pickup address visible</h3>
+          <p><strong>What I observed.</strong> After the guest chose a branch, checkout showed the city and state without the street address.</p>
+          <p><strong>What I changed.</strong> I kept the selected branch’s full address visible through checkout so guests could verify it before placing the order.</p><blockquote>The shopper tried to call the store to verify the street address after seeing only “Ypsilanti, MI.” The receipt also lacked an order number the store could look up.<cite>Paraphrased from the guest checkout session</cite></blockquote>
+        </div>
+        <div class="comparison" role="group" aria-label="Original and proposed interface excerpts"><div class="comparison-panel"><p class="eyebrow">Original checkout · excerpt</p><div class="ui-sample"><span class="sample-label">Pickup location</span><strong>Ypsilanti, MI</strong></div></div><div class="comparison-panel proposed"><p class="eyebrow">Proposed checkout · excerpt</p><div class="ui-sample"><span class="sample-label">Pickup location</span><strong>1298 Anna J. Stepp Dr</strong><span>Ypsilanti, MI 48197</span></div></div></div>
+      </article>
+      <article class="decision" id="combo-pricing">
+        <div class="decision-copy">
+          <h3>02. Separate inclusions from extras</h3>
+          <p><strong>What I observed.</strong> The combo photo showed breadsticks that were sold separately, and included options appeared with positive price modifiers.</p>
+          <p><strong>What I changed.</strong> I labeled included choices explicitly, separated sides from crust choices, and reserved price modifiers for paid extras.</p>
+        </div>
+        <div class="comparison" role="group" aria-label="Original and proposed interface excerpts"><div class="comparison-panel"><p class="eyebrow">Original pricing · excerpt</p><div class="ui-sample"><span class="sample-label">Customize your combo</span><div class="ui-line"><span>Included drink option</span><strong>+$1.30</strong></div><a class="mini-link" href="gallery/image2.png">View original builder screen ↗</a></div></div><div class="comparison-panel proposed"><p class="eyebrow">Proposed pricing · excerpt</p><div class="ui-sample"><span class="sample-label">Customize your combo</span><div class="ui-line"><span>Drink</span><strong class="badge">Included · $0</strong></div><div class="ui-line"><span>Breadsticks</span><span>Optional extra</span></div></div></div></div>
+      </article>
+      <article class="decision" id="order-receipt">
+        <div class="decision-copy">
+          <h3>03. Make the order easy to look up</h3>
+          <p><strong>What I observed.</strong> The confirmation email showed the total and pickup time, but it gave the guest no order number or full street address.</p>
+          <p><strong>What I changed.</strong> I moved the order number and pickup address near the top of the confirmation, alongside the pickup time and payment instructions.</p>
+        </div>
+        <div class="comparison" role="group" aria-label="Original and proposed interface excerpts"><div class="comparison-panel"><p class="eyebrow">Original receipt · excerpt</p><div class="ui-sample"><span class="sample-label">Jet’s Pizza</span><strong>Pickup confirmation</strong><span>Ypsilanti, MI 48197</span><div class="ui-line"><span>Total</span><strong>$29.65</strong></div></div></div><div class="comparison-panel proposed"><p class="eyebrow">Proposed receipt · example</p><div class="ui-sample"><span class="sample-label">Jet’s Pizza · Pickup confirmed</span><strong>Order #JP-1042</strong><span>1298 Anna J. Stepp Dr<br>Ypsilanti, MI 48197</span><div class="ui-line"><span>Pickup</span><strong>5:30 p.m.</strong></div><div class="ui-line"><span>Pay at store</span><strong>$29.65</strong></div></div></div></div>
+      </article>
+      </section>
+      <section class="case-section support-section" id="interviews" aria-labelledby="interviews-title">
+        <div class="section-heading"><h2 id="interviews-title">What I tested</h2></div>
+        <p>I gave four participants the same task to try independently. Order a Large Combo with pepperoni, jalapeños, and a drink for pickup in Ypsilanti, then check out as a guest and choose to pay at pickup.</p>
+        <p>In the WhatsApp follow-up, I asked where they hesitated, which toppings they expected to cost extra, what they expected to pay at pickup, and which address and order number they would use.</p>
+        <details class="disclosure" id="interview-responses">
+          <summary>View participant interviews</summary>
+          <div class="disclosure-body">
+            <p class="interview-table-hint" id="interview-table-note">A dash marks a question without a specific response in the interview notes. Scroll across to read all columns on smaller screens.</p>
+            <div class="interview-table-scroll" role="region" aria-label="Interview response table" aria-describedby="interview-table-note" tabindex="0">
+              <table class="interview-table">
+                <caption class="sr-only">Responses from four prototype pilot participants</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Order completion</th>
+                    <th scope="col">Topping charges</th>
+                    <th scope="col">Amount due at pickup</th>
+                    <th scope="col">Pickup address and order ID</th>
+                    <th scope="col">Suggested change</th>
+                    <th scope="col">Additional comments</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Maor</th>
+                    <td>Reported completing the order independently without getting stuck.</td>
+                    <td>Expected jalapeños to cost extra, depending on the restaurant.</td>
+                    <td>Expected to pay for the order only. Did not give an amount.</td>
+                    <td>Said the address was visible from the start. Did not give an address or order ID.</td>
+                    <td>Keep the page in place when opening the receipt. It jumped back to the top.</td>
+                    <td>Suggested searching for a branch by street address.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Mark</th>
+                    <td>Reported completing the order without getting stuck.</td>
+                    <td>Reported no extra charge for pepperoni and a $1.98 charge for jalapeños. Had expected about $5 extra.</td>
+                    <td>Reported seeing $29.65 before payment.</td>
+                    <td>Identified 1298 Anna J. Stepp Dr, Ypsilanti, MI 48197. Did not give an order ID.</td>
+                    <td>Would keep the flow as it was and described it as clear and easy.</td>
+                    <td>Mentioned being unfamiliar with local pizza prices.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ido</th>
+                    <td>Reported completing the order independently and described the flow as smooth.</td>
+                    <td>Expected to pay $1–$2 per topping.</td>
+                    <td>Mentioned the pickup timer and guessed pickup might cost up to $5. Did not give the order total.</td>
+                    <td>Read out parts of the address and several numbers. Did not clearly identify an order ID.</td>
+                    <td>Keep the scroll position after clicking. The page repeatedly jumped to the top.</td>
+                    <td>Also read out the estimated pickup window.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Hodaya</th>
+                    <td>Reported completing the order. Noticed pepperoni was missing on the first attempt and repeated the order.</td>
+                    <td>Added pepperoni, jalapeños, and cola on the second attempt. Reported no price expectation.</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>Later said the overall flow worked and was clear.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+        <section class="pilot-impact" aria-labelledby="pilot-impact-title">
+          <h3 id="pilot-impact-title">Prototype impact</h3>
+          <p>Self-reported results from the four-person pilot.</p>
+          <dl class="pilot-metrics">
+            <div>
+              <dt>Completed the pickup order</dt>
+              <dd><span class="pilot-metric-value">100%</span><span class="pilot-metric-count">4 of 4 participants</span></dd>
+            </div>
+            <div>
+              <dt>Understood the branch’s pickup address</dt>
+              <dd><span class="pilot-metric-value">100%</span><span class="pilot-metric-count">4 of 4 participants</span></dd>
+            </div>
+            <div>
+              <dt>Reported the page jumping to the top</dt>
+              <dd><span class="pilot-metric-value">50%</span><span class="pilot-metric-count">2 of 4 participants</span></dd>
+            </div>
+          </dl>
+        </section>
+      </section>
+      <section class="case-section reflection" id="conclusion" aria-labelledby="reflection-title">
+        <div class="reflection-title"><h2 id="reflection-title">What changed</h2></div>
+        <div>
+          <p><strong>In the redesign.</strong> Guests can see the full address during checkout and on the receipt. The combo builder labels included items and paid extras, and the receipt groups the order number with pickup and payment details.</p>
+          <p><strong>What the pilot surfaced.</strong> One participant repeated the order after missing pepperoni. Two reported that the page jumped to the top, including one who was trying to open the receipt. The interview replies gave limited evidence about whether guests could find the order number.</p>
+          <p><strong>Next iteration.</strong> I’d bring the receipt into view when it opens, then observe whether guests select the requested toppings on their first attempt and can find the amount due and order number without help.</p>
+        </div>
+      </section>
+      <section class="case-section support-section" id="prototype" aria-labelledby="prototype-title">
+        <div class="section-heading"><h2 id="prototype-title">Interactive prototype</h2></div>
+        <p>Try a simulated guest pickup order using ZIP code <strong>48197</strong>. Use the sample contact details at checkout. No order or payment will be processed.</p>
+        <p class="prototype-actions">
+          <a class="button" href="https://broom-silk-85495694.figma.site/" target="_blank" rel="noopener noreferrer">Open prototype in a new tab <span aria-hidden="true">↗</span></a>
+        </p>
+        <iframe class="prototype-frame" src="https://broom-silk-85495694.figma.site/" title="Jet’s Pizza guest pickup ordering prototype" loading="lazy" allowfullscreen></iframe>
+      </section>
+      <section class="case-section support-section" id="research" aria-labelledby="research-title">
+        <div class="section-heading"><h2 id="research-title">Research details</h2></div>
+        <details class="disclosure" id="pizza-research"><summary>Observation, guest profile, and reference flow</summary><div class="disclosure-body">
+          <p>I watched one guest place a pickup order on the live Jet’s Pizza site and mapped the steps from branch selection through the confirmation email. The session surfaced specific points of friction and gave me questions to test with more shoppers.</p>
+          <div class="profile"><img src="gallery/Miguel.jpg" alt="" width="90" height="90" loading="lazy"><div><h3>Miguel · Guest shopper persona</h3><p>Orders pizza for pickup and wants to verify the total, the store, and that the order went through.</p></div></div>
+          <h3>Proposed guest flow</h3><ol class="process-list"><li>Choose a pickup branch.</li><li>Select the combo and customize the items.</li><li>Verify address, items, and total.</li><li>Place the order and pay at pickup.</li><li>Use the email confirmation to look up the order.</li></ol>
+        </div></details>
+        <details class="disclosure" id="competitive-analysis">
+          <summary>Competitive analysis · Jet’s Pizza vs. Domino’s</summary>
+          <div class="disclosure-body">
+            <p>I compared the two ordering flows during the audit to see how each handled the information a guest needs before and after placing a pickup order.</p>
+            <table class="competitive-table">
+              <caption>What I observed in the two ordering flows</caption>
+              <thead>
+                <tr><th scope="col">Area</th><th scope="col">Jet’s Pizza</th><th scope="col">Domino’s</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Combo contents</th><td>The combo photo showed breadsticks sold separately.</td><td>The offer showed the items included in the deal.</td></tr>
+                <tr><th scope="row">Pricing</th><td>Included choices appeared with added prices in the builder.</td><td>Itemized choices separated included options from paid extras.</td></tr>
+                <tr><th scope="row">Pickup location</th><td>The street address disappeared during checkout.</td><td>The selected store’s street address stayed visible.</td></tr>
+                <tr><th scope="row">Confirmation</th><td>The email lacked the full pickup address and an order number.</td><td>The branded confirmation showed store details and an order ID.</td></tr>
+              </tbody>
+            </table>
+            <p class="competitive-takeaway"><strong>What I used in the redesign.</strong> I made inclusions explicit, kept the pickup address visible, and moved the order number to the top of the receipt.</p>
+          </div>
+        </details>
+      </section>
+      <details class="disclosure" id="next-steps"><summary>Explore the order tracking concept</summary><div class="disclosure-body">
+        <p>This optional concept follows the order from confirmation to pickup. I’d explore it after testing the core checkout and receipt.</p>
+        <div class="tracker" data-tracker>
+          <p class="eyebrow">Example order #JP-1042</p>
+          <ol><li>Order received</li><li>In the oven</li><li>Ready for pickup</li><li>Picked up</li></ol>
+          <button type="button" class="button" data-replay hidden>Play order progress <span aria-hidden="true">▶</span></button>
+          <p class="sr-only" role="status" data-tracker-status></p>
+        </div>
+      </div></details>
+      <a class="next-project" href="livinamerica.html"><span><span class="eyebrow">Next case study / Mobile game UX</span><strong>Livin’ America</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>Srulik Shriki <span class="footer-role">· UX/UI Design</span></span>
+      <nav aria-label="Footer">
+        <a href="mailto:ishriki@emich.edu">Email</a><a href="https://www.linkedin.com/in/srulik-shriki-858525204/">LinkedIn</a><a href="https://canva.link/yx0ch3mzbwve8dt">Résumé</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
