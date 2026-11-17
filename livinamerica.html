@@ -14,15 +14,35 @@
       padding: clamp(.5rem, 1.2vw, 1rem);
     }
 
-    .case-prototype iframe {
-      display: block;
-      width: min(100%, 390px);
-      height: clamp(34rem, 78svh, 43rem);
+    .prototype-viewport {
+      --frame-width: 390;
+      --frame-height: 916;
+      --fit-height: clamp(20rem, calc(100svh - 15rem), 42rem);
+      position: relative;
+      width: min(100%, calc(var(--fit-height) * var(--frame-width) / var(--frame-height)));
+      aspect-ratio: var(--frame-width) / var(--frame-height);
       margin-inline: auto;
-      border: 0;
+      overflow: hidden;
       border-radius: 12px;
       background: #fff;
       box-shadow: 0 13px 29px #45325738;
+    }
+
+    .prototype-viewport iframe {
+      position: absolute;
+      inset: 0 auto auto 0;
+      display: block;
+      width: calc(var(--frame-width) * 1px);
+      height: calc(var(--frame-height) * 1px);
+      border: 0;
+      transform: scale(var(--prototype-scale, 1));
+      transform-origin: top left;
+    }
+
+    @media (max-width: 620px) {
+      .prototype-viewport {
+        --fit-height: min(42rem, calc(100svh - 6.5rem));
+      }
     }
   </style>
   <script src="assets/js/portfolio.js" defer></script>
@@ -57,12 +77,14 @@
           </a>
         </div>
         <div class="case-cover case-prototype">
-          <iframe
-            src="https://pure-italic-92584115.figma.site/"
-            title="Livin’ America interactive prototype"
-            width="390"
-            height="640"
-          ></iframe>
+          <div class="prototype-viewport">
+            <iframe
+              src="https://pure-italic-92584115.figma.site/?view=portfolio"
+              title="Livin’ America interactive prototype"
+              width="390"
+              height="916"
+            ></iframe>
+          </div>
         </div>
       </section>
     </div>
@@ -188,5 +210,18 @@
       </nav>
     </div>
   </footer>
+  <script>
+    {
+      const viewport = document.querySelector(".prototype-viewport");
+      const frame = viewport.querySelector("iframe");
+      const fitPrototype = () => {
+        const scale = viewport.getBoundingClientRect().width / Number(frame.width);
+        viewport.style.setProperty("--prototype-scale", scale);
+      };
+
+      fitPrototype();
+      new ResizeObserver(fitPrototype).observe(viewport);
+    }
+  </script>
 </body>
 </html>
