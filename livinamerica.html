@@ -8,6 +8,23 @@
   <title>Livin’ America case study | Srulik Shriki</title>
   <link rel="icon" href="assets/home/srulik-mark.webp">
   <link rel="stylesheet" href="assets/css/portfolio.css">
+  <style>
+    .case-cover.case-prototype {
+      min-width: 0;
+      padding: clamp(.5rem, 1.2vw, 1rem);
+    }
+
+    .case-prototype iframe {
+      display: block;
+      width: min(100%, 390px);
+      height: clamp(34rem, 78svh, 43rem);
+      margin-inline: auto;
+      border: 0;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 13px 29px #45325738;
+    }
+  </style>
   <script src="assets/js/portfolio.js" defer></script>
 </head>
 <body id="top" class="theme-game">
@@ -39,7 +56,14 @@
             Play the prototype <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
           </a>
         </div>
-        <figure class="case-cover"><img src="assets/home/livin-america.webp" alt="Livin’ America’s mobile welcome screen" width="1000" height="563" fetchpriority="high"></figure>
+        <div class="case-cover case-prototype">
+          <iframe
+            src="https://pure-italic-92584115.figma.site/"
+            title="Livin’ America interactive prototype"
+            width="390"
+            height="640"
+          ></iframe>
+        </div>
       </section>
     </div>
     <div class="wrap case-body">
