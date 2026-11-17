@@ -41,7 +41,7 @@
 
     .screen.laptop-frame {
       --base-height: clamp(7px, 1vw, 13px);
-      padding: clamp(6px, 1.1vw, 12px) clamp(5px, .85vw, 10px) clamp(7px, 1.35vw, 14px);
+      padding: clamp(6px, 1.1vw, 12px) clamp(5px, .85vw, 10px) clamp(15px, 2.35vw, 27px);
       margin-bottom: var(--base-height);
       border-radius: clamp(7px, 1.1vw, 15px) clamp(7px, 1.1vw, 15px) 3px 3px;
       overflow: visible;
@@ -94,6 +94,11 @@
       grid-column: 1 / -1;
       justify-self: end;
       margin: 0;
+    }
+
+    .projects .project,
+    .projects .project .project-visual {
+      background: #fff;
     }
 
     .pizza-project .device-preview {
