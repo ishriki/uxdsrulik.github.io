@@ -105,7 +105,7 @@
       }
     }
 
-    .case-body > :is(#overview, #interviews, #conclusion, #research) {
+    .case-body > :is(#overview, #interviews, #conclusion, #research, #next-steps) {
       --section-top: var(--case-nav-clearance, 7rem);
       box-sizing: border-box;
       align-content: center;
@@ -113,6 +113,10 @@
       padding-block: clamp(1.5rem, 4svh, 3rem);
       margin-block: 0;
       scroll-margin-top: var(--section-top);
+    }
+
+    #next-steps summary[hidden] {
+      display: none;
     }
 
     :is(#interviews, #research) .section-heading {
@@ -319,6 +323,7 @@
         <a href="#conclusion">What changed</a>
         <a href="#prototype">Prototype</a>
         <a href="#research">Research details</a>
+        <a href="#next-steps">Next Steps</a>
       </nav>
     </div>
     <div class="wrap case-body">
@@ -507,15 +512,22 @@
           </details>
         </div>
       </section>
-      <details class="disclosure" id="next-steps"><summary>Explore the order tracking concept</summary><div class="disclosure-body">
-        <p>This optional concept follows the order from confirmation to pickup. I’d explore it after testing the core checkout and receipt.</p>
-        <div class="tracker" data-tracker>
-          <p class="eyebrow">Example order #JP-1042</p>
-          <ol><li>Order received</li><li>In the oven</li><li>Ready for pickup</li><li>Picked up</li></ol>
-          <button type="button" class="button" data-replay hidden>Play order progress <span aria-hidden="true">▶</span></button>
-          <p class="sr-only" role="status" data-tracker-status></p>
-        </div>
-      </div></details>
+      <section class="case-section support-section" id="next-steps" aria-labelledby="next-steps-title">
+        <div class="section-heading"><h2 id="next-steps-title">Next Steps</h2></div>
+        <details class="disclosure" open>
+          <summary hidden>Explore the order tracking concept</summary>
+          <div class="disclosure-body">
+            <h3>Explore the order tracking concept</h3>
+            <p>This optional concept follows the order from confirmation to pickup. I’d explore it after testing the core checkout and receipt.</p>
+            <div class="tracker" data-tracker>
+              <p class="eyebrow">Example order #JP-1042</p>
+              <ol><li>Order received</li><li>In the oven</li><li>Ready for pickup</li><li>Picked up</li></ol>
+              <button type="button" class="button" data-replay hidden>Play order progress <span aria-hidden="true">▶</span></button>
+              <p class="sr-only" role="status" data-tracker-status></p>
+            </div>
+          </div>
+        </details>
+      </section>
       <a class="next-project" href="livinamerica.html"><span><span class="eyebrow">Next case study / Mobile game UX</span><strong>Livin’ America</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
     </div>
   </main>
