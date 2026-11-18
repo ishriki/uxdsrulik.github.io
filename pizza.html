@@ -10,7 +10,13 @@
   <link rel="stylesheet" href="assets/css/portfolio.css">
   <style>
     .theme-pizza .case-top {
-      padding-block: clamp(.65rem, 2vh, 1.25rem);
+      --intro-padding: clamp(1.5rem, 4svh, 3rem);
+      --intro-space: calc(100svh - var(--intro-page-offset, 4rem));
+      box-sizing: border-box;
+      display: grid;
+      align-content: center;
+      min-block-size: max(0px, var(--intro-space));
+      padding-block: var(--intro-padding);
     }
 
     .theme-pizza .case-top .flagship {
@@ -48,7 +54,7 @@
       --frame-height: 900;
       width: min(100%, 29rem);
       margin-inline: auto;
-      scroll-margin-top: 6rem;
+      scroll-margin-top: max(1rem, var(--intro-page-offset, 4rem));
     }
 
     .prototype-stage {
@@ -93,16 +99,20 @@
 
       .hero-prototype {
         --frame-width: 1200;
-        width: min(100%, max(22rem, calc((100svh - 12rem) * 1.3333)));
+        width: min(100%, max(18rem, calc((var(--intro-space) - 2 * var(--intro-padding) - 3.5rem) * 4 / 3)));
         justify-self: end;
         margin-inline: 0;
       }
     }
 
-    .case-body :is(#interviews, #conclusion, #research) {
-      padding-block: clamp(.9rem, 2.2vh, 1.4rem);
-      margin-block: clamp(.9rem, 3vh, 1.75rem);
-      scroll-margin-top: 8rem;
+    .case-body > :is(#overview, #interviews, #conclusion, #research) {
+      --section-top: var(--case-nav-clearance, 7rem);
+      box-sizing: border-box;
+      align-content: center;
+      min-block-size: max(0px, calc(100svh - var(--section-top)));
+      padding-block: clamp(1.5rem, 4svh, 3rem);
+      margin-block: 0;
+      scroll-margin-top: var(--section-top);
     }
 
     :is(#interviews, #research) .section-heading {
@@ -518,7 +528,31 @@
     </div>
   </footer>
   <script>
+    const caseIntro = document.querySelector('.case-top');
+    const caseBars = document.querySelectorAll('.site-header, .case-nav-bar');
+    const viewportStyle = document.documentElement.style;
     const prototypeStage = document.querySelector('.prototype-stage');
+
+    function measureCaseViewport() {
+      const introTop = Math.max(0, caseIntro.getBoundingClientRect().top + window.scrollY);
+      let navBottom = 0;
+
+      for (const bar of caseBars) {
+        const { position, top } = getComputedStyle(bar);
+        const stickyTop = parseFloat(top);
+        if ((position === 'sticky' || position === 'fixed') && Number.isFinite(stickyTop)) {
+          navBottom = Math.max(navBottom, stickyTop + bar.getBoundingClientRect().height);
+        }
+      }
+
+      viewportStyle.setProperty('--intro-page-offset', `${introTop}px`);
+      viewportStyle.setProperty('--case-nav-clearance', `${Math.ceil(navBottom)}px`);
+    }
+
+    measureCaseViewport();
+    const caseBarObserver = new ResizeObserver(measureCaseViewport);
+    caseBars.forEach(bar => caseBarObserver.observe(bar));
+    window.addEventListener('resize', measureCaseViewport);
 
     function fitPrototype() {
       const previewWidth = Number(getComputedStyle(prototypeStage).getPropertyValue('--frame-width'));
