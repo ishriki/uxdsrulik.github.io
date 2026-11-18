@@ -13,9 +13,17 @@
       padding-block: clamp(.65rem, 2vh, 1.25rem);
     }
 
+    .theme-pizza .case-top .flagship {
+      display: grid;
+      align-items: center;
+      gap: clamp(1rem, 3vw, 2.5rem);
+      padding-block: 0;
+    }
+
     .flagship .flagship-heading {
       display: block;
-      margin-bottom: .65rem;
+      min-width: 0;
+      margin-bottom: 0;
     }
 
     .flagship-heading h1 {
@@ -27,6 +35,12 @@
     .flagship-heading .eyebrow,
     .flagship-heading .case-subtitle {
       margin-block: .25rem 0;
+    }
+
+    .flagship-heading .case-intro {
+      margin-block: .85rem 1rem;
+      max-width: 42ch;
+      line-height: 1.5;
     }
 
     .hero-prototype {
@@ -73,15 +87,22 @@
     }
 
     @media (min-width: 48rem) {
+      .theme-pizza .case-top .flagship {
+        grid-template-columns: minmax(16rem, .8fr) minmax(0, 1.3fr);
+      }
+
       .hero-prototype {
         --frame-width: 1200;
-        width: min(100%, 74rem, max(26rem, calc((100svh - 15.5rem) * 1.3333)));
+        width: min(100%, max(22rem, calc((100svh - 12rem) * 1.3333)));
+        justify-self: end;
+        margin-inline: 0;
       }
     }
 
     .case-body :is(#interviews, #conclusion, #research) {
       padding-block: clamp(.9rem, 2.2vh, 1.4rem);
       margin-block: clamp(.9rem, 3vh, 1.75rem);
+      scroll-margin-top: 8rem;
     }
 
     :is(#interviews, #research) .section-heading {
@@ -266,6 +287,8 @@
           <p class="eyebrow">01 / E-commerce UX</p>
           <h1 id="case-title">Jet’s Pizza</h1>
           <p class="case-subtitle">Making pickup details easier to find</p>
+          <p class="case-intro">I redesigned Jet’s Pizza’s guest checkout and receipt after watching a shopper try to call the store when the pickup address disappeared. In the prototype pilot, five participants reported completing the order and knowing where to pick it up.</p>
+          <a class="button" href="#prototype">Try the interactive prototype</a>
         </div>
         <div class="hero-prototype" id="prototype">
           <div class="prototype-stage">
@@ -349,7 +372,7 @@
         <div class="section-heading"><h2 id="interviews-title">What I tested</h2></div>
         <p>I gave five participants the same task to try independently. Order a Large Combo with pepperoni, jalapeños, and a drink for pickup in Ypsilanti, then check out as a guest and choose to pay at pickup.</p>
         <p>In the follow-up, I asked where they hesitated, which toppings they expected to cost extra, what they expected to pay at pickup, and which address and order number they would use.</p>
-        <details class="disclosure" id="interview-responses" open>
+        <details class="disclosure" id="interview-responses">
           <summary>View participant interviews</summary>
           <div class="disclosure-body">
             <p class="interview-table-hint" id="interview-table-note">A dash marks a question without a specific response in the interview notes. Scroll across to read all columns on smaller screens.</p>
@@ -448,12 +471,12 @@
       <section class="case-section support-section" id="research" aria-labelledby="research-title">
         <div class="section-heading"><h2 id="research-title">Research details</h2></div>
         <div class="research-grid">
-          <details class="disclosure" id="pizza-research" open><summary>Observation, guest profile, and reference flow</summary><div class="disclosure-body">
+          <details class="disclosure" id="pizza-research"><summary>Observation, guest profile, and reference flow</summary><div class="disclosure-body">
             <p>I watched one guest place a pickup order on the live Jet’s Pizza site and mapped the steps from branch selection through the confirmation email. The session surfaced specific points of friction and gave me questions to test with more shoppers.</p>
             <div class="profile"><img src="gallery/Miguel.jpg" alt="" width="90" height="90" loading="lazy"><div><h3>Miguel · Guest shopper persona</h3><p>Orders pizza for pickup and wants to verify the total, the store, and that the order went through.</p></div></div>
             <h3>Proposed guest flow</h3><ol class="process-list"><li>Choose a pickup branch.</li><li>Select the combo and customize the items.</li><li>Verify address, items, and total.</li><li>Place the order and pay at pickup.</li><li>Use the email confirmation to look up the order.</li></ol>
           </div></details>
-          <details class="disclosure" id="competitive-analysis" open>
+          <details class="disclosure" id="competitive-analysis">
             <summary>Competitive analysis · Jet’s Pizza vs. Domino’s</summary>
             <div class="disclosure-body">
               <p>I compared the two ordering flows during the audit to see how each handled the information a guest needs before and after placing a pickup order.</p>
