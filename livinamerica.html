@@ -9,9 +9,55 @@
   <link rel="icon" href="assets/home/srulik-mark.webp">
   <link rel="stylesheet" href="assets/css/portfolio.css">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .theme-game {
+      --case-nav-height: 5.25rem;
+      --case-anchor-gap: .75rem;
+    }
+
+    .theme-game .case-body [id] {
+      scroll-margin-top: calc(var(--case-nav-height) + var(--case-anchor-gap));
+    }
+
+    #overview,
+    #methodology,
+    #recommendations {
+      min-block-size: calc(100svh - var(--case-nav-height) - var(--case-anchor-gap));
+    }
+
+    #overview {
+      --case-anchor-gap: 0px;
+    }
+
+    #methodology,
+    #recommendations {
+      display: grid;
+      align-content: center;
+    }
+
     .case-cover.case-prototype {
       min-width: 0;
       padding: clamp(.5rem, 1.2vw, 1rem);
+      background: #fff;
+    }
+
+    #problems-solutions .game-finding {
+      max-inline-size: 54rem;
+      margin-inline: auto;
+      grid-template-columns: minmax(0, 1fr) minmax(10rem, 13rem);
+      gap: clamp(.85rem, 2vw, 1.5rem);
+      padding: clamp(.875rem, 1.6vw, 1.25rem);
+    }
+
+    #problems-solutions .phone-figure {
+      padding: .65rem;
+    }
+
+    #problems-solutions .phone-figure img {
+      max-block-size: 224px;
     }
 
     .prototype-viewport {
@@ -43,6 +89,25 @@
       .prototype-viewport {
         --fit-height: min(42rem, calc(100svh - 6.5rem));
       }
+
+      #problems-solutions .game-finding {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #problems-solutions .phone-figure {
+        justify-self: center;
+        inline-size: min(100%, 12rem);
+      }
+
+      #problems-solutions .phone-figure img {
+        max-block-size: 180px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
   </style>
   <script src="assets/js/portfolio.js" defer></script>
@@ -59,9 +124,6 @@
       </nav>
     </div>
   </header>
-  <div class="case-nav-bar">
-    <nav class="wrap case-nav" aria-label="In this case study"><a href="#overview">Overview</a><a href="#problems-solutions">Key findings</a><a href="#methodology">Audit details</a><a href="#recommendations">Reflection</a></nav>
-  </div>
   <main id="main" tabindex="-1">
 
     <div class="case-top">
@@ -88,6 +150,9 @@
         </div>
       </section>
     </div>
+    <div class="case-nav-bar">
+      <nav class="wrap case-nav" aria-label="In this case study"><a href="#overview">Overview</a><a href="#problems-solutions">Key findings</a><a href="#methodology">Audit details</a><a href="#recommendations">Reflection</a></nav>
+    </div>
     <div class="wrap case-body">
       <section class="case-overview" id="overview" aria-labelledby="overview-title">
         <div>
@@ -113,43 +178,6 @@
         <figure class="phone-figure"><a href="gallery/5.jpg" aria-label="Open original screenshot of the trait selection screen"><img src="gallery/5.jpg" width="720" height="1600" loading="lazy" alt="the trait selection screen"></a><figcaption>Trait selection during setup</figcaption></figure>
 
       </article>
-      <section class="trait-concept" id="trait-concept" aria-labelledby="trait-concept-title">
-        <div class="trait-concept-copy">
-          <p class="eyebrow">Proposed interface · Finding 01</p>
-          <h3 id="trait-concept-title">One choice, two states</h3>
-          <p>The instruction sets the rule up front. The selected card confirms the choice through its border, radio indicator, and label. Continue becomes available after a trait is selected.</p>
-        </div>
-        <div class="trait-states" role="group" aria-label="Two states of the proposed trait selection screen">
-          <figure class="trait-state">
-            <figcaption><span class="eyebrow">01 / Default</span><strong>Before a choice</strong></figcaption>
-            <div class="trait-screen">
-              <p class="trait-step">Character setup</p>
-              <p class="trait-title">Choose one trait</p>
-              <ul class="trait-options">
-                <li><span class="trait-radio"></span>Artistic</li>
-                <li><span class="trait-radio"></span>Athletic</li>
-                <li><span class="trait-radio"></span>Adventurous</li>
-              </ul>
-              <p class="trait-action trait-unavailable">Continue</p>
-              <p class="trait-status">Choose a trait to continue.</p>
-            </div>
-          </figure>
-          <figure class="trait-state">
-            <figcaption><span class="eyebrow">02 / Selected</span><strong>Ready to continue</strong></figcaption>
-            <div class="trait-screen">
-              <p class="trait-step">Character setup</p>
-              <p class="trait-title">Choose one trait</p>
-              <ul class="trait-options">
-                <li class="trait-selected"><span class="trait-radio"></span>Artistic <small>Selected</small></li>
-                <li><span class="trait-radio"></span>Athletic</li>
-                <li><span class="trait-radio"></span>Adventurous</li>
-              </ul>
-              <p class="trait-action">Continue <span aria-hidden="true">→</span></p>
-              <p class="trait-status">Artistic selected.</p>
-            </div>
-          </figure>
-        </div>
-      </section>
       <article class="game-finding" id="reading-pace">
         <div class="finding-copy">
           <p class="eyebrow">Finding 02</p><h3>Let players read at their own pace</h3>
@@ -195,9 +223,11 @@
 <article class="audit-step" data-audit-step><div><h3>16. Job Market Realism &amp; Interview Concept</h3><p>&quot;Job pool feels realistic. Would love an interview demonstration.&quot; Interactive hiring simulations build authentic engagement.</p><p>Add recruitment mini-games and simulated recruiter interviews for practical life-skill practice.</p></div><div class="audit-media"><a href="gallery/16.jpg"><img src="gallery/16.jpg" alt="Step 16 Job Market Screen" loading="lazy"></a></div></article>
 <article class="audit-step" data-audit-step><div><h3>17. Demographic Representation Across Life Stages</h3><p>&quot;Relocating to the USA happens across all age groups and experience levels.&quot; Multiple life-stage branches expand player market reach.</p><p>Offer optional setup tracks (Student, Young Professional, Career Relocator) during onboarding.</p></div><div class="audit-media"><a href="gallery/17.jpg"><img src="gallery/17.jpg" alt="Step 17 Life Stages Screen" loading="lazy"></a></div></article></div></div></details>
       </section>
-      <section class="case-section reflection" id="recommendations" aria-labelledby="reflection-title">
-        <div class="reflection-title"><p class="eyebrow">Reflection</p><h2 id="reflection-title">Test the premise before expanding the story</h2></div>
-        <div><p>Clarifying that the story starts at 18 is a small copy change. Supporting multiple life stages would also change the scenarios, choices, and progression.</p><p>I’d test the clearer setup with first-time players across age groups and ask them who they’re playing and how they know. If players understood the premise and still wanted to explore later-life scenarios, I’d prototype one alternative opening before designing more story tracks.</p></div>
+      <section id="recommendations" aria-labelledby="reflection-title">
+        <div class="case-section reflection">
+          <div class="reflection-title"><p class="eyebrow">Reflection</p><h2 id="reflection-title">Test the premise before expanding the story</h2></div>
+          <div><p>Clarifying that the story starts at 18 is a small copy change. Supporting multiple life stages would also change the scenarios, choices, and progression.</p><p>I’d test the clearer setup with first-time players across age groups and ask them who they’re playing and how they know. If players understood the premise and still wanted to explore later-life scenarios, I’d prototype one alternative opening before designing more story tracks.</p></div>
+        </div>
       </section>
       <a class="next-project" href="pizza.html"><span><span class="eyebrow">Also in selected work / E-commerce UX</span><strong>Jet’s Pizza</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
     </div>
@@ -214,13 +244,17 @@
     {
       const viewport = document.querySelector(".prototype-viewport");
       const frame = viewport.querySelector("iframe");
-      const fitPrototype = () => {
+      const caseNav = document.querySelector(".case-nav-bar");
+      const updateLayout = () => {
         const scale = viewport.getBoundingClientRect().width / Number(frame.width);
         viewport.style.setProperty("--prototype-scale", scale);
+        document.body.style.setProperty("--case-nav-height", `${caseNav.getBoundingClientRect().height}px`);
       };
 
-      fitPrototype();
-      new ResizeObserver(fitPrototype).observe(viewport);
+      updateLayout();
+      const observer = new ResizeObserver(updateLayout);
+      observer.observe(viewport);
+      observer.observe(caseNav);
     }
   </script>
 </body>
