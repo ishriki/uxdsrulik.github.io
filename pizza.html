@@ -128,8 +128,70 @@
       line-height: 1.45;
     }
 
-    #conclusion .reflection-title h2 {
-      margin-top: 0;
+    .reflection-panel {
+      box-sizing: border-box;
+      display: grid;
+      align-items: center;
+      gap: clamp(1rem, 3vw, 2rem);
+      padding: clamp(1.05rem, 2.8vw, 2rem);
+      border: 1px solid #e5d8d6;
+      border-radius: 1rem;
+      background: #f7efee;
+    }
+
+    #conclusion .reflection-panel h2 {
+      margin: 0 0 .75rem;
+    }
+
+    #conclusion .reflection-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .reflection-receipt {
+      min-width: 0;
+      margin: 0;
+      padding: clamp(.9rem, 2.2vw, 1.4rem);
+      border: 1px solid #e7d9d8;
+      border-top: 3px solid #9f2029;
+      border-radius: .7rem;
+      background: #fff;
+    }
+
+    .reflection-receipt figcaption {
+      color: #9f2029;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+
+    .receipt-details {
+      margin: .6rem 0 0;
+    }
+
+    .receipt-details > div {
+      padding-block: .5rem;
+      border-top: 1px dashed #decfce;
+    }
+
+    .receipt-details > div:last-child {
+      padding-bottom: 0;
+    }
+
+    .receipt-details dt {
+      color: #605852;
+      font-size: .78rem;
+    }
+
+    .receipt-details dd {
+      margin: .1rem 0 0;
+      font-size: .95rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    @media (min-width: 52rem) {
+      .reflection-panel {
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr);
+      }
     }
 
     .research-grid {
@@ -138,16 +200,29 @@
       align-items: start;
     }
 
-    .research-grid .disclosure {
-      margin: 0;
+    .research-card {
       min-width: 0;
+      padding: clamp(.85rem, 1.75vw, 1.2rem);
+      border: 1px solid #ded8d2;
+      border-radius: .85rem;
+      background: #fff;
     }
 
-    :is(#interviews, #research) .disclosure summary {
+    .research-card h3 {
+      margin: 0 0 .55rem;
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .research-card h4 {
+      margin: .45rem 0 .2rem;
+    }
+
+    #interviews .disclosure summary {
       padding-block: .55rem;
     }
 
-    :is(#interviews, #research) .disclosure-body {
+    #interviews .disclosure-body {
       padding-block: .5rem .7rem;
     }
 
@@ -321,7 +396,6 @@
         <a href="#showcase">Design decisions</a>
         <a href="#interviews">Prototype test</a>
         <a href="#conclusion">What changed</a>
-        <a href="#prototype">Prototype</a>
         <a href="#research">Research details</a>
         <a href="#next-steps">Next Steps</a>
       </nav>
@@ -475,41 +549,50 @@
           </dl>
         </section>
       </section>
-      <section class="case-section reflection" id="conclusion" aria-labelledby="reflection-title">
-        <div class="reflection-title"><h2 id="reflection-title">What changed</h2></div>
-        <div>
-          <p><strong>In the redesign.</strong> Guests can see the full address during checkout and on the receipt. The combo builder labels included items and paid extras, and the receipt groups the order number with pickup and payment details.</p>
-          <p><strong>What the pilot surfaced.</strong> One participant repeated the order after missing pepperoni. Two reported that the page jumped to the top, including one who was trying to open the receipt. Gil gave both the full pickup address and order number in his reply.</p>
-          <p><strong>Next iteration.</strong> I’d bring the receipt into view when it opens, then observe whether guests select the requested toppings on their first attempt and can find the amount due and order number without help.</p>
+      <section class="case-section" id="conclusion" aria-labelledby="reflection-title">
+        <div class="reflection-panel">
+          <div class="reflection-copy">
+            <h2 id="reflection-title">What changed</h2>
+            <p><strong>In the redesign.</strong> Guests can see the full address during checkout and on the receipt. The combo builder labels included items and paid extras, and the receipt groups the order number with pickup and payment details.</p>
+            <p><strong>What the pilot surfaced.</strong> One participant repeated the order after missing pepperoni. Two reported that the page jumped to the top, including one who was trying to open the receipt. Gil gave both the full pickup address and order number in his reply.</p>
+            <p><strong>Next iteration.</strong> I’d bring the receipt into view when it opens, then observe whether guests select the requested toppings on their first attempt and can find the amount due and order number without help.</p>
+          </div>
+          <figure class="reflection-receipt">
+            <figcaption>Proposed pickup receipt</figcaption>
+            <dl class="receipt-details">
+              <div><dt>Order number</dt><dd>#JP-1042</dd></div>
+              <div><dt>Pickup location</dt><dd>1298 Anna J. Stepp Dr<br>Ypsilanti, MI 48197</dd></div>
+              <div><dt>Amount due at pickup</dt><dd>$29.65</dd></div>
+            </dl>
+          </figure>
         </div>
       </section>
       <section class="case-section support-section" id="research" aria-labelledby="research-title">
         <div class="section-heading"><h2 id="research-title">Research details</h2></div>
         <div class="research-grid">
-          <details class="disclosure" id="pizza-research"><summary>Observation, guest profile, and reference flow</summary><div class="disclosure-body">
+          <article class="research-card" id="pizza-research" aria-labelledby="pizza-research-title">
+            <h3 id="pizza-research-title">Observation, guest profile, and reference flow</h3>
             <p>I watched one guest place a pickup order on the live Jet’s Pizza site and mapped the steps from branch selection through the confirmation email. The session surfaced specific points of friction and gave me questions to test with more shoppers.</p>
-            <div class="profile"><img src="gallery/Miguel.jpg" alt="" width="90" height="90" loading="lazy"><div><h3>Miguel · Guest shopper persona</h3><p>Orders pizza for pickup and wants to verify the total, the store, and that the order went through.</p></div></div>
-            <h3>Proposed guest flow</h3><ol class="process-list"><li>Choose a pickup branch.</li><li>Select the combo and customize the items.</li><li>Verify address, items, and total.</li><li>Place the order and pay at pickup.</li><li>Use the email confirmation to look up the order.</li></ol>
-          </div></details>
-          <details class="disclosure" id="competitive-analysis">
-            <summary>Competitive analysis · Jet’s Pizza vs. Domino’s</summary>
-            <div class="disclosure-body">
-              <p>I compared the two ordering flows during the audit to see how each handled the information a guest needs before and after placing a pickup order.</p>
-              <table class="competitive-table">
-                <caption>What I observed in the two ordering flows</caption>
-                <thead>
-                  <tr><th scope="col">Area</th><th scope="col">Jet’s Pizza</th><th scope="col">Domino’s</th></tr>
-                </thead>
-                <tbody>
-                  <tr><th scope="row">Combo contents</th><td>The combo photo showed breadsticks sold separately.</td><td>The offer showed the items included in the deal.</td></tr>
-                  <tr><th scope="row">Pricing</th><td>Included choices appeared with added prices in the builder.</td><td>Itemized choices separated included options from paid extras.</td></tr>
-                  <tr><th scope="row">Pickup location</th><td>The street address disappeared during checkout.</td><td>The selected store’s street address stayed visible.</td></tr>
-                  <tr><th scope="row">Confirmation</th><td>The email lacked the full pickup address and an order number.</td><td>The branded confirmation showed store details and an order ID.</td></tr>
-                </tbody>
-              </table>
-              <p class="competitive-takeaway"><strong>What I used in the redesign.</strong> I made inclusions explicit, kept the pickup address visible, and moved the order number to the top of the receipt.</p>
-            </div>
-          </details>
+            <div class="profile"><img src="gallery/Miguel.jpg" alt="" width="90" height="90" loading="lazy"><div><h4>Miguel · Guest shopper persona</h4><p>Orders pizza for pickup and wants to verify the total, the store, and that the order went through.</p></div></div>
+            <h4>Proposed guest flow</h4><ol class="process-list"><li>Choose a pickup branch.</li><li>Select the combo and customize the items.</li><li>Verify address, items, and total.</li><li>Place the order and pay at pickup.</li><li>Use the email confirmation to look up the order.</li></ol>
+          </article>
+          <article class="research-card" id="competitive-analysis" aria-labelledby="competitive-analysis-title">
+            <h3 id="competitive-analysis-title">Competitive analysis · Jet’s Pizza vs. Domino’s</h3>
+            <p>I compared the two ordering flows during the audit to see how each handled the information a guest needs before and after placing a pickup order.</p>
+            <table class="competitive-table">
+              <caption>What I observed in the two ordering flows</caption>
+              <thead>
+                <tr><th scope="col">Area</th><th scope="col">Jet’s Pizza</th><th scope="col">Domino’s</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Combo contents</th><td>The combo photo showed breadsticks sold separately.</td><td>The offer showed the items included in the deal.</td></tr>
+                <tr><th scope="row">Pricing</th><td>Included choices appeared with added prices in the builder.</td><td>Itemized choices separated included options from paid extras.</td></tr>
+                <tr><th scope="row">Pickup location</th><td>The street address disappeared during checkout.</td><td>The selected store’s street address stayed visible.</td></tr>
+                <tr><th scope="row">Confirmation</th><td>The email lacked the full pickup address and an order number.</td><td>The branded confirmation showed store details and an order ID.</td></tr>
+              </tbody>
+            </table>
+            <p class="competitive-takeaway"><strong>What I used in the redesign.</strong> I made inclusions explicit, kept the pickup address visible, and moved the order number to the top of the receipt.</p>
+          </article>
         </div>
       </section>
       <section class="case-section support-section" id="next-steps" aria-labelledby="next-steps-title">
